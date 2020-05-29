@@ -1,0 +1,259 @@
+body{
+    margin: 0 auto;
+}
+
+.top-bar{
+    width: auto;
+    height: 200px;
+    background-color: #000;
+    z-index: 1;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  text-align: center;
+  top: 170px;
+  left: 50px;  
+  z-index: 2;  
+  -webkit-user-select: none;
+  user-select: none;
+  left: 50%;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  /* color: #232323; */
+  color: #fff;
+
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: rgb(0, 255, 85);
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;  
+  background: #cdcdcd;
+  border-radius: 3px;  
+  z-index: 1;  
+  transform-origin: 4px 0px;  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  /* top: 250px; */
+  width: 300px;
+  margin: -100px 0 0 -50px;  
+  right: 164vh; /*modify the position ZK*/
+  padding: 50px;
+  padding-top: 125px;  
+  /* background: #ededed; */
+  background: #000;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */  
+  transform-origin: 0% 0%;
+  transform: translate(0, -200%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+}
+
+/* .btn-1{
+
+    right: 0px;
+    top: 130px;
+    width: 400px;
+} */
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+/*SUBMENU CSS*/
+
+.submenu-content li {
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.submenu-content li:hover {
+    background-color: rgba(78, 78, 78, 0.8);
+}
+
+.submenu-content-a, .submenu-content-b {
+    display: block;
+}
+
+.submenu-content {  
+    padding-left: 0px;
+}
+
+/* MENU */
+nav {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+nav ul {
+    margin-right: 0px;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.submenu-content-a {
+    display: block;
+}
+nav .logo {
+    padding-left: 30px;
+    width: 100%;
+}
+/* .show+a, ul {
+    display: none;
+} */
+nav ul li, nav ul ul li {
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+nav ul li a:hover {
+    box-shadow: none;
+}
+.show {
+    display: block;
+    color: white;
+    font-size: 15px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.show:hover {
+    color: cyan;
+}
+.icon {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+}
+nav ul ul {
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+}
+nav ul ul a {
+    padding-left: 0;
+    display: block;
+}
+nav ul ul ul a {
+    padding-left: 0px;
+    text-align: left;
+    display: block;
+}
+nav ul ul ul li {
+    position: static;
+}
+[id^=btn]:checked+ul {
+    display: block;
+}
+nav ul ul li {
+    border-bottom: 0px;
+}
+span.cancel:before {
+    content: '\f00d';
+}
