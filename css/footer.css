@@ -2,7 +2,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    
+}
+
+:root{
+    --color-marine-blue: #102746;
+    --color-minor-blue: #006A91;
+    --color-blue-grey: #BEDEDB;
+    --color-light-grey: #F6FBF5;
+    --color-green: #93BC55;
+    --font-family-basic: ;
 }
 
 /* ==========================================
@@ -10,14 +18,14 @@
 ============================================*/
 
 body{
-    background: #102746;
+    background: var(--color-light-grey);
 }
 
 .footer_container{
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: white;
+    background: var(--color-marine-blue);
 }
 
 .footer_container_second{
@@ -35,6 +43,7 @@ body{
 .footer_second > h1{
     font-size: 1.2rem;
     font-weight: bold;
+    color: white;
 }
 
 .contact-form_group{
@@ -44,7 +53,8 @@ body{
 }
 
 .contact-form_group > label {
-    padding: 10px 0; 
+    padding: 10px 0;
+    color: white;
 }
 
 .contact-form_group > input{
@@ -63,11 +73,11 @@ body{
 
 .contact-form_btn{
     margin-top: 10px;
-    background: #102746;
+    background: var(--color-blue-grey);
     padding: 5px;
     border-radius: 5px;
     width: 25%;
-    color: white;
+    color: var(--color-marine-blue);
     border: none;
     transition: .4s;
     -webkit-appearance: none;
@@ -83,6 +93,10 @@ body{
     flex-direction: column;
 }
 
+.contact-newsletter_group > p{
+    color: var(--color-light-grey);
+}
+
 .contact-newsletter_group > input{
     padding: 5px;
     border-radius: 5px;
@@ -94,11 +108,11 @@ body{
 
 .contact-newsletter_btn{
     margin-top: 10px;
-    background: #102746;
+    background: var(--color-blue-grey);
     padding: 5px;
     border-radius: 5px;
     width: 25%;
-    color: white;
+    color: var(--color-marine-blue);
     border: none;
     transition: .4s;
     -webkit-appearance: none;
@@ -117,7 +131,7 @@ body{
 .footer_icon > a > .fab{
     font-size: 1.5rem;
     padding-right: 10px;
-    color: #102746;
+    color: var(--color-light-grey);
     transition: .4s;
     -webkit-appearance: none;
 }
@@ -128,9 +142,9 @@ body{
 }
 
 .footer_copyright{
-    color: white;
+    color: var(--color-marine-blue);
     text-align: center;
-    background: #102746;
+    background: var(--color-light-grey);
 }
 
 @media screen and (max-width: 1024px){
